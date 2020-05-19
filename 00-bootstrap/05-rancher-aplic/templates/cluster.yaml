@@ -18,7 +18,7 @@ metadata:
   name: c-{{ .Values.clusterPrefixo | required "Deve inserir um prefixo para o cluster!" }}
 spec:
 {{ toYaml .Values.clusterConfig | indent 2 }}
-status:
-  conditions:
-  - status: "True"
-    type: Pending
+#status:
+#  conditions:
+#  - status: "True"
+#    type: Pending

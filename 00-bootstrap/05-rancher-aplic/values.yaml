@@ -17,8 +17,7 @@ clusterConfig:
       strategy: x509|webhook
     authorization:
       mode: rbac
-    bastionHost:
-      sshAgentAuth: false
+    bastionHost: {}
     cloudProvider: {}
     dns:
       linearAutoscalerParams:
@@ -60,12 +59,9 @@ clusterConfig:
       mtu: 0
       plugin: none
     privateRegistries:
-    - isDefault: true
-      password: null
+    - isDefault: true]
       url: atf.intranet.bb.com.br:5001
-      user: null
-    restore:
-      restore: false
+    restore: {}
     services:
       etcd:
         backupConfig:
@@ -159,8 +155,8 @@ clusterConfig:
   clusterTemplateRevisionName: null
   defaultClusterRoleForProjectMembers: null
   defaultPodSecurityPolicyTemplateName: null
-  desiredAgentImage: null
-  desiredAuthImage: null
+  desiredAgentImage: ""
+  desiredAuthImage: ""
   enableClusterAlerting: false
   enableClusterMonitoring: false
   enableNetworkPolicy: false
