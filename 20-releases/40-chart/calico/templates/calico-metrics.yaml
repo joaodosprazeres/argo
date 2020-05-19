@@ -1,0 +1,27 @@
+{{- if .Values.calicoNode.metrics.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: felix-metrics-svc
+  namespace: kube-system
+spec:
+  selector:
+    k8s-app: calico-node
+  ports:
+  - port: {{ .Values.calicoNode.metrics.port }}
+    targetPort: {{ .Values.calicoNode.metrics.port }}
+{{- end }}
+{{- if and .Values.typha.enabled .Values.typha.metrics.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: typha-metrics-svc
+  namespace: kube-system
+spec:
+  selector:
+    k8s-app: calico-typha
+  ports:
+  - port: {{ .Values.typha.metrics.port }}
+    targetPort: {{ .Values.typha.metrics.port }}
+{{- end }}

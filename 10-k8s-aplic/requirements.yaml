@@ -1,0 +1,4 @@
+dependencies:
+  - name: k8s-aplic
+    version: 0.2.0
+    repository: http://chartmuseum.devops.nuvem.bb.com.br:30001/bb/psc/

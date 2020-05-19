@@ -1,0 +1,16 @@
+k8s-namespaces:
+  release:
+    deploy: argocd # argocd ou manual
+    sigla: psc
+    git: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
+  clusterK8s:
+    name: k8s-apps-des
+    abbreviation: kad
+    api: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
+  namespaces:
+    enabled: true
+    servicos: #o nome do namespace sera sigla + nome
+      - name: proxy
+        annotations:
+          - key: argocd.argoproj.io/hook
+            value: PreSync

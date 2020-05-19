@@ -1,0 +1,4 @@
+apiVersion: v1
+description: Chart service-external-name
+name: services-proxy
+version: 0.1.0

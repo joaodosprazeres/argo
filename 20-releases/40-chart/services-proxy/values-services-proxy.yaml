@@ -1,0 +1,8 @@
+service-external-name:
+  enable: true
+  namespace: psc-proxy
+  service:
+    - name: ldap
+      urlExterna: ldp0pb1.bb.com.br
+    - name: cachebb
+      urlExterna: cache.bb.desenv.com.br

@@ -1,0 +1,7 @@
+dependencies:
+  - name: nfs-client-provisioner
+    version: 1.2.6
+    repository: http://chartmuseum.devops.nuvem.bb.com.br/bb/infra
+  - name: k8s-namespaces
+    version: 0.1.0
+    repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra

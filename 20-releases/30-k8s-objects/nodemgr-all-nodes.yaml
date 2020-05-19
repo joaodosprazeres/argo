@@ -1,0 +1,188 @@
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb098
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb098
+    node.k8s.bb/ip: 172.17.189.20
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/master: "true"
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb113
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb113
+    node.k8s.bb/ip: 172.17.189.21
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/master: "true"
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb114
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb114
+    node.k8s.bb/ip: 172.17.189.23
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/master: "true"
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb115
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb115
+    node.k8s.bb/ip: 172.17.189.25
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/worker: "true"
+    feature.node.k8s.bb/nas: "true"
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb116
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb116
+    node.k8s.bb/ip: 172.17.189.26
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/worker: "true"
+    feature.node.k8s.bb/nas: "true"
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb117
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb117
+    node.k8s.bb/ip: 172.17.189.39
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/worker: "true"
+    feature.node.k8s.bb/nas: "true"
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb118
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb118
+    node.k8s.bb/ip: 172.17.189.40
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/worker: "true"
+    feature.node.k8s.bb/nas: "true"
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb119
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb119
+    node.k8s.bb/ip: 172.17.189.46
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/worker: "true"
+    feature.node.k8s.bb/nas: "true"
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb120
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb120
+    node.k8s.bb/ip: 172.17.189.67
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/worker: "true"
+    feature.node.k8s.bb/nas: "true"
+---
+apiVersion: psc.bb.com.br/v1alpha1
+kind: Nodemgr
+metadata:
+  name: dxl1psckb121
+spec:
+  labels:
+    node.k8s.bb/cluster: k8s-apps-des
+    node.k8s.bb/hostname: dxl1psckb121
+    node.k8s.bb/ip: 172.17.189.70
+    node.k8s.bb/label-ver: "0.1.0"
+    node.k8s.bb/netmask: 172.17.189.0_25
+    node.k8s.bb/rede: desenv
+    node.k8s.bb/site: preprod
+    node.k8s.bb/so: rancheros
+    node.k8s.bb/virtualizador: vmware
+    node.k8s.bb/vlanid: "225"
+    papel.node.k8s.bb/worker: "true"
+    feature.node.k8s.bb/nas: "true"
+---
