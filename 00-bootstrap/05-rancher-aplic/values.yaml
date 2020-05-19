@@ -135,12 +135,12 @@ clusterConfig:
           v: "2"
     sshAgentAuth: false
     upgradeStrategy:
-      drain: false
+      #drain: false
       maxUnavailableControlplane: "1"
       maxUnavailableWorker: 10%
       nodeDrainInput:
-        deleteLocalData: false
-        force: false
+      #  deleteLocalData: false
+      #  force: false
         gracePeriod: -1
         ignoreDaemonSets: true
         timeout: 120
