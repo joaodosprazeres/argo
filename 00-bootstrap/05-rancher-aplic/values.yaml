@@ -26,23 +26,23 @@ clusterConfig:
         min: 3
         nodesPerReplica: 4
         preventSinglePointFailure: true
-      nodeSelector: null
+      #nodeSelector: null
       nodelocal:
         ipAddress: 169.254.20.10
-        nodeSelector: null
+        #nodeSelector: null
         updateStrategy:
           rollingUpdate:
             maxUnavailable: 1
           strategy: RollingUpdate
       provider: coredns
-      reversecidrs: null
-      stubdomains: null
+      #reversecidrs: null
+      #stubdomains: null
       updateStrategy:
         rollingUpdate: 
           maxSurge: 2
           maxUnavailable: 1
         strategy: RollingUpdate
-      upstreamnameservers: null
+      #upstreamnameservers: null
     ignoreDockerVersion: true
     ingress:
       provider: none
@@ -56,7 +56,6 @@ clusterConfig:
           maxUnavailable: 0
         strategy: RollingUpdate
     network:
-      mtu: 0
       plugin: none
     privateRegistries:
     - isDefault: true
@@ -68,17 +67,17 @@ clusterConfig:
           enabled: true
           intervalHours: 12
           retention: 6
-          safeTimestamp: false
+        #  safeTimestamp: false
         creation: 12h
         extraArgs:
           election-timeout: "5000"
           heartbeat-interval: "500"
-        gid: 0
+        #gid: 0
         retention: 72h
         snapshot: false
-        uid: 0
+        #uid: 0
       kubeApi:
-        alwaysPullImages: false
+        #alwaysPullImages: false
         auditLog:
           configuration:
             format: json
@@ -99,7 +98,7 @@ clusterConfig:
           enabled: true
         extraArgs:
           v: "2"
-        podSecurityPolicy: false
+        #podSecurityPolicy: false
         serviceClusterIpRange: 3.3.0.0/16
         serviceNodePortRange: 30000-32767
       kubeController:
@@ -126,8 +125,8 @@ clusterConfig:
           system-reserved: cpu=1000m
           system-reserved-cgroup: /system.slice
           v: "2"
-        failSwapOn: false
-        generateServingCertificate: false
+        #failSwapOn: false
+        #generateServingCertificate: false
       kubeproxy:
         extraArgs:
           v: "2"
@@ -147,17 +146,17 @@ clusterConfig:
         timeout: 120
     #addons: |
   # Extra configs      
-  scheduledClusterScan:
-  enabled: false
-  scanConfig: null
-  scheduleConfig: null
-  windowsPreferedCluster: false
-  clusterTemplateRevisionName: null
-  defaultClusterRoleForProjectMembers: null
-  defaultPodSecurityPolicyTemplateName: null
-  desiredAgentImage: ""
-  desiredAuthImage: ""
   enableClusterAlerting: false
   enableClusterMonitoring: false
   enableNetworkPolicy: false
-  internal: false
+  #scheduledClusterScan:
+  #  enabled: false
+  #  scanConfig: null
+  #  scheduleConfig: null
+  #windowsPreferedCluster: false
+  #clusterTemplateRevisionName: null
+  #defaultClusterRoleForProjectMembers: null
+  #defaultPodSecurityPolicyTemplateName: null
+  #desiredAgentImage: ""
+  #desiredAuthImage: ""
+  #internal: false
