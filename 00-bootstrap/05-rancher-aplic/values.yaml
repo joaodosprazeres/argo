@@ -59,7 +59,7 @@ clusterConfig:
       mtu: 0
       plugin: none
     privateRegistries:
-    - isDefault: true]
+    - isDefault: true
       url: atf.intranet.bb.com.br:5001
     restore: {}
     services:
