@@ -13,7 +13,9 @@ k8s-aplic:
       - name: rancher-aplic
         finalizers: ["resources-finalizer.argocd.argoproj.io"]
         labels: []
-        annotations: []
+        annotations: 
+          - key: "argocd.argoproj.io/sync-wave"
+            value: '"-2"'
         spec: 
           source:
             targetRevision: HEAD
