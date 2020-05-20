@@ -63,8 +63,12 @@ nginx-ingress:
     ##
     ingressClass: nginx
 
+    # labels to add to the deployment metadata
+    deploymentLabels: {}
+
     # labels to add to the pod container metadata
     podLabels: {}
+    #  key: value
 
     ## Security Context policies for controller pods
     ## See https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/ for
@@ -122,7 +126,10 @@ nginx-ingress:
     ## DaemonSet or Deployment
     ##
     kind: DaemonSet
-
+    
+    ## Annotations to be added to the controller deployment
+    deploymentAnnotations: {}
+    
     # The update strategy to apply to the Deployment or DaemonSet
     ##
     updateStrategy: 
@@ -319,6 +326,8 @@ nginx-ingress:
     #   command: ['sh', '-c', 'until nslookup myservice; do echo waiting for myservice; sleep 2; done;']
 
     metrics:
+      port: 10254
+      # if this port is changed, change healthz-port: in extraArgs: accordingly
       enabled: true
 
       service:
@@ -326,8 +335,9 @@ nginx-ingress:
         # prometheus.io/scrape: "true"
         # prometheus.io/port: "10254"
 
-        omitClusterIP: true
-        clusterIP: ""
+        ## Deprecated, instead simply do not provide a clusterIP value
+        #omitClusterIP: false
+        #clusterIP: ""
 
         ## List of IP addresses at which the stats-exporter service is available
         ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -388,7 +398,7 @@ nginx-ingress:
 
     name: default-backend
     image:
-      repository:  atf.intranet.bb.com.br:5001/bb/psc/defaultbackend-amd64
+      repository: atf.intranet.bb.com.br:5001/bb/psc/defaultbackend-amd64
       tag: "1.5"
       pullPolicy: IfNotPresent
       # nobody user -> uid 65534
@@ -436,6 +446,9 @@ nginx-ingress:
     ## notes on enabling and using sysctls
     ##
     podSecurityContext: {}
+
+    # labels to add to the deployment metadata
+    deploymentLabels: {}
 
     # labels to add to the pod container metadata
     podLabels: {}
