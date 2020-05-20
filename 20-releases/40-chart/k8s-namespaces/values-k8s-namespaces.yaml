@@ -12,6 +12,6 @@ k8s-namespaces:
     enabled: true
     servicos: #o nome do namespace sera sigla + nome
       - name: admin
-        annotations:
-          - key: argocd.argoproj.io/hook
-            value: PreSync
+        #annotations:
+        #  - key: argocd.argoproj.io/hook
+        #   value: PreSync
