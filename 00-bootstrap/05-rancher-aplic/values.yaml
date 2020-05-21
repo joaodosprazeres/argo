@@ -67,6 +67,7 @@ clusterConfig:
           enabled: true
           intervalHours: 12
           retention: 6
+          s3BackupConfig: null
         #  safeTimestamp: false
         creation: 12h
         extraArgs:
