@@ -67,7 +67,13 @@ clusterConfig:
           enabled: true
           intervalHours: 12
           retention: 6
-          s3BackupConfig: null
+        #  s3BackupConfig: 
+        #    accessKey: 
+        #    secretKey:
+        #    bucketName: rancher-backups
+        #    endpoint: medley.nuvem.bb.com.br:8080
+        #    folder: k8s-rancher
+        #    region: medley  
         #  safeTimestamp: false
         creation: 12h
         extraArgs:
