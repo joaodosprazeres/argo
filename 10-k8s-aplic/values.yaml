@@ -182,3 +182,25 @@ k8s-aplic:
             automated:
               prune: true
               selfHeal: true
+
+      - name: volume-shared-operator
+        finalizers: ["resources-finalizer.argocd.argoproj.io"]
+        labels: []
+        annotations: []
+        spec:
+          source:
+            targetRevision: HEAD
+            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
+            path: 20-releases/40-chart/volume-shared-operator
+            helm:
+              valueFiles:
+                - values-k8s-namespaces.yaml
+                - values.yaml
+          destination:
+            namespace: psc-volume-shared-operator
+            server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
+          project: k8s-apps-des
+          syncPolicy:
+            automated:
+              prune: true
+              selfHeal: true
