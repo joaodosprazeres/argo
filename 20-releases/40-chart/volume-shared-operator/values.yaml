@@ -1,0 +1,20 @@
+volume-shared-operator:
+  nfs:
+    server: "[2801:8e:802::1]"
+    path: "/root_vdm_11/DNN1PSCDF007/k8s-apps-des"
+
+  deployment:
+    imagePullSecrets: atfregistry
+    replicaCount: 1
+    containers:
+      image: "atf.intranet.bb.com.br:5001/bb/psc/psc-volume-shared-operator:0.1.6"
+      imagePullPolicy: IfNotPresent
+      resources:
+        requests:
+          cpu: 300m
+          memory: 500Mi
+        limits:
+          cpu: 600m
+          memory: 1000Mi
+    nodeSelector:
+      feature.node.k8s.bb/nas: "true"
