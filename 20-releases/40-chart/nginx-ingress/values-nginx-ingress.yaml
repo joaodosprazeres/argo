@@ -5,12 +5,17 @@ nginx-ingress:
   controller:
     name: controller
     image:
-      repository: atf.intranet.bb.com.br:5001/bb/psc/kubernetes-ingress-controller/nginx-ingress-controller
-      tag: 0.25.1
+      repository: atf.intranet.bb.com.br:5001/kubernetes-ingress-controller/nginx-ingress-controller
+      tag: "0.32.0"
       pullPolicy: IfNotPresent
-      # www-data -> uid 33
-      runAsUser: 33
+      # www-data -> uid 101
+      runAsUser: 101
       allowPrivilegeEscalation: true
+
+    # This will fix the issue of HPA not being able to read the metrics.
+    # Note that if you enable it for existing deployments, it won't work as the labels are immutable.
+    # We recommend setting this to true for new deployments.
+    useComponentLabel: false
 
     # Configures the ports the nginx-controller listens on
     containerPort:
@@ -21,6 +26,9 @@ nginx-ingress:
     config: # Retirada as opcçoes de TLSv1 e TLSv1.1 do nginx-ingress-controller. Essas versoes de protocolo foram removidas em razao das fragilidades que apresentam.
       large-client-header-buffers: "4 32k"
 
+    # Maxmind license key to download GeoLite2 Databases
+    # https://blog.maxmind.com/2019/12/18/significant-changes-to-accessing-and-using-geolite2-databases
+    maxmindLicenseKey: ""
 
     # Will add custom headers before sending traffic to backends according to https://github.com/kubernetes/ingress-nginx/tree/master/docs/examples/customization/custom-headers
     proxySetHeaders: {}
@@ -32,6 +40,9 @@ nginx-ingress:
     # since CNI and hostport don't mix yet. Can be deprecated once https://github.com/kubernetes/kubernetes/issues/23920
     # is merged
     hostNetwork: false
+
+    # Optionally customize the pod dnsConfig.
+    dnsConfig: {}
 
     # Optionally change this to ClusterFirstWithHostNet in case you have 'hostNetwork: true'.
     # By default, while using host network, name resolution uses the host's DNS. If you wish nginx-controller
@@ -154,7 +165,7 @@ nginx-ingress:
     ## Affinity and anti-affinity
     ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
     ##
-    affinity:
+    affinity: {}
       # # An example of preferred pod anti-affinity, weight is in the range 1-100
       # podAntiAffinity:
       #   preferredDuringSchedulingIgnoredDuringExecution:
@@ -229,9 +240,9 @@ nginx-ingress:
       enabled: false
       minReplicas: 3
       maxReplicas: 11
-      targetMemoryUtilizationPercentage: 50
       targetCPUUtilizationPercentage: 50
-
+      targetMemoryUtilizationPercentage: 50
+      
     ## Override NGINX template
     customTemplate:
       configMapName: ""
@@ -242,8 +253,9 @@ nginx-ingress:
 
       annotations: {}
       labels: {}
-      omitClusterIP: true
-      clusterIP: ""
+      ## Deprecated, instead simply do not provide a clusterIP value
+      #omitClusterIP: true
+      #clusterIP: ""
 
       ## List of IP addresses at which the controller services are available
       ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -260,6 +272,10 @@ nginx-ingress:
       ## providers supporting it
       ## Ref: https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-typeloadbalancer
       externalTrafficPolicy: ""
+
+      # Must be either "None" or "ClientIP" if set. Kubernetes will default to "None".
+      # Ref: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
+      sessionAffinity: ""
 
       healthCheckNodePort: 0
 
@@ -404,6 +420,11 @@ nginx-ingress:
       # nobody user -> uid 65534
       runAsUser: 65534
 
+    # This will fix the issue of HPA not being able to read the metrics.
+    # Note that if you enable it for existing deployments, it won't work as the labels are immutable.
+    # We recommend setting this to true for new deployments.
+    useComponentLabel: false
+
     extraArgs: {}
 
     serviceAccount:
@@ -477,8 +498,9 @@ nginx-ingress:
 
     service:
       annotations: {}
-      omitClusterIP: true
-      clusterIP: ""
+      ## Deprecated, instead simply do not provide a clusterIP value
+      #omitClusterIP: true
+      #clusterIP: ""
 
       ## List of IP addresses at which the default backend service is available
       ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -491,6 +513,9 @@ nginx-ingress:
       type: ClusterIP
 
     priorityClassName: ""
+    
+  # If provided, the value will be used as the `release` label instead of .Release.Name
+  releaseLabelOverride: ""
 
   ## Enable RBAC as per https://github.com/kubernetes/ingress/tree/master/examples/rbac/nginx and https://github.com/kubernetes/ingress/issues/266
   rbac:
