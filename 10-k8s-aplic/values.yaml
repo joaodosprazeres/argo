@@ -7,6 +7,9 @@ k8s-aplic:
     name: k8s-apps-des
     api: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
     abbreviation: kad
+    extraApi:
+    - namespace: cattle-system
+      server: https://caas-api.apps.nuvem.bb.com.br:6443
   argocd:
     namespace: psc-argocd
     apps:
