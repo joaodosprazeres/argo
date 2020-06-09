@@ -1,9 +1,0 @@
-dependencies:
-- name: nodemgr-operator
-  repository: http://chartmuseum.devops.nuvem.bb.com.br:30001/bb/psc/
-  version: 0.1.1
-- name: k8s-namespaces
-  repository: http://chartmuseum.devops.nuvem.bb.com.br:30001/bb/psc/
-  version: 0.1.0
-digest: sha256:263c11111633d2d3c7e5ba00ddbc8978202766f266833d616cc44e34704a3a4b
-generated: "2020-06-09T11:46:13.006118-03:00"
