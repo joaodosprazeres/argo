@@ -1,0 +1,9 @@
+dependencies:
+- name: volume-shared-operator
+  repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/psc
+  version: 1.0.0
+- name: k8s-namespaces
+  repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra
+  version: 0.1.0
+digest: sha256:21d50bc41072dee81057e806a732eb0b335ffe00e6c58aa250c16e0c32c1f66a
+generated: "2020-06-09T11:48:30.113633-03:00"

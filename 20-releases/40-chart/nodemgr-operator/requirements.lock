@@ -5,5 +5,5 @@ dependencies:
 - name: k8s-namespaces
   repository: http://chartmuseum.devops.nuvem.bb.com.br:30001/bb/psc/
   version: 0.1.0
-digest: sha256:263c11111633d2d3c7e5ba00ddbc8978202766f266833d616cc44e34704a3a4b
-generated: "2020-06-09T11:46:13.006118-03:00"
+digest: sha256:80cb775d2f0bbeeb2502f2558adaa9cb6b7f8c7b2673441554ea0292ce1db90b
+generated: "2020-06-09T12:20:06.824045-03:00"

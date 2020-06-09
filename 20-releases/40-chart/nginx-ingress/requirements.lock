@@ -1,0 +1,9 @@
+dependencies:
+- name: nginx-ingress
+  repository: http://chartmuseum.devops.nuvem.bb.com.br/bb/psc
+  version: 1.37.0
+- name: k8s-namespaces
+  repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra
+  version: 0.1.0
+digest: sha256:8cf99b5d18c8cbbe0625260e3210bd383fbf0d1bf4e0f7a05d2373d7a43f06b7
+generated: "2020-06-09T11:43:57.25553-03:00"
