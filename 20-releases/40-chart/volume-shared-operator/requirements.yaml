@@ -1,7 +1,0 @@
-dependencies:
-  - name: volume-shared-operator
-    version: 1.0.0
-    repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/psc
-  - name: k8s-namespaces
-    version: 0.1.0
-    repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra

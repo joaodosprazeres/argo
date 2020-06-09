@@ -1,0 +1,6 @@
+dependencies:
+- name: calico
+  repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/psc
+  version: 0.1.0
+digest: sha256:eb0733e1688b794c769a988cb3a82cf965fbf1b65d66cf6709ed6b7a76c350a7
+generated: "2020-06-09T10:34:24.011163-03:00"

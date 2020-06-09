@@ -426,7 +426,7 @@ nginx-ingress:
 
     lifecycle: {}
 
-    priorityClassName: ""
+    priorityClassName: "psc-servicos-plataforma"
 
   ## Rollback limit
   ##

@@ -1,0 +1,9 @@
+dependencies:
+- name: service-external-name
+  repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra
+  version: 0.1.0
+- name: k8s-namespaces
+  repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra
+  version: 0.1.0
+digest: sha256:b089cebc5899e5ba2ee80f6cf82f71230402c046e8a863f3e0def94741a57cd2
+generated: "2020-06-09T11:47:38.413356-03:00"

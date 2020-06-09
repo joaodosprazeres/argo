@@ -1,7 +1,0 @@
-dependencies:
-  - name: service-external-name
-    version: 0.1.0
-    repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra
-  - name: k8s-namespaces
-    version: 0.1.0
-    repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra

@@ -52,7 +52,7 @@ nfs-client-provisioner:
     enabled: false
 
   ## Set pod priorityClassName
-  # priorityClassName: ""
+  priorityClassName: "psc-servicos-plataforma"
 
   serviceAccount:
     # Specifies whether a ServiceAccount should be created
