@@ -1,7 +1,7 @@
 dependencies:
 - name: dnsservice-operator
   repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/psc
-  version: 0.1.0
+  version: 0.1.1
 - name: k8s-namespaces
   repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra
   version: 0.1.0
