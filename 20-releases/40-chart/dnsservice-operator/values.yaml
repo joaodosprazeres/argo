@@ -1,6 +1,7 @@
 dnsservice-operator:
   zones:
-  - zone: "desenv.bb.com.br."
+  - name: dnsbb
+    zone: "desenv.bb.com.br."
     records: "ingress.apps.nuvem.desenv.bb.com.br."
     type: "CNAME"
     ttl: "3600"
