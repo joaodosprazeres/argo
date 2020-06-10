@@ -1,0 +1,7 @@
+dnsservice-operator:
+  zones:
+  - zone: "desenv.bb.com.br."
+    records: "ingress.apps.nuvem.desenv.bb.com.br."
+    type: "CNAME"
+    ttl: "3600"
+    description: "Zona desenv.bb para o cluster k8s-apps-des"

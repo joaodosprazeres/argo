@@ -1,0 +1,6 @@
+dependencies:
+- name: k8s-aplic
+  repository: http://chartmuseum.devops.nuvem.bb.com.br:30001/bb/psc/
+  version: 0.2.1
+digest: sha256:61371a4f7f2e2bfa2945b3f7ac547abad32ca1f98f7182bbb0185b15953abd95
+generated: "2020-06-09T12:39:18.878444-03:00"
