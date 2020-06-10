@@ -5,5 +5,5 @@ dependencies:
 - name: k8s-namespaces
   repository: https://chartmuseum.devops.nuvem.bb.com.br/bb/infra
   version: 0.1.0
-digest: sha256:28e6ab137bceeaa2f959d0e3d84e18499ccdef03d92fa769cfe70fa6032fe1a6
-generated: "2020-06-10T14:31:50.497016-03:00"
+digest: sha256:d69c4962d2f5657e8edb643f909e8c2ef8995bf2d8a618af9b2d3f438968d12d
+generated: "2020-06-10T17:57:07.657386-03:00"
