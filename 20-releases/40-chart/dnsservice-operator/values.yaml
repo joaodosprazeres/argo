@@ -1,4 +1,5 @@
 dnsservice-operator:
+  dnsZoneNames: dnsbb
   zones:
   - name: dnsbb
     zone: "desenv.bb.com.br."
