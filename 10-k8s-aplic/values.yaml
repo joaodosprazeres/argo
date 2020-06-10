@@ -152,7 +152,7 @@ k8s-aplic:
         annotations: []
         spec:
           destination:
-            namespace: psc-dnsservice-operator
+            namespace: psc-dnsservice
             server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
           project: k8s-apps-des
           source:
