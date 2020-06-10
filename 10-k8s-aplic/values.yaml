@@ -146,6 +146,28 @@ k8s-aplic:
               prune: true
               selfHeal: true         
  
+      - name: dnsservice-operator
+        finalizers: []
+        labels: []
+        annotations: []
+        spec:
+          destination:
+            namespace: psc-dnsservice-operator
+            server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
+          project: k8s-apps-des
+          source:
+            helm:
+              valueFiles:
+              - values-k8s-namespaces.yaml
+              - values.yaml
+            path: 20-releases/40-chart/dnsservice-operator
+            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
+            targetRevision: HEAD
+          syncPolicy:
+            automated:
+              prune: true
+              selfHeal: true  
+
       - name: proxy
         finalizers: []
         labels: []
