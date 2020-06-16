@@ -10,6 +10,8 @@ k8s-aplic:
     extraApi:
     - namespace: cattle-system
       server: https://caas-api.apps.nuvem.bb.com.br:6443
+    - namespace: c-kad
+      server: https://caas-api.apps.nuvem.bb.com.br:6443
   argocd:
     namespace: psc-argocd
     apps:
