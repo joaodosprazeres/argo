@@ -1,0 +1,6 @@
+dependencies:
+- name: rancher-aplic
+  repository: http://chartmuseum.devops.nuvem.bb.com.br:30001/bb/psc/
+  version: 0.1.0
+digest: sha256:729d749aa352b887bd2f0e46d0f2f349c36bb00bf3136bdcd0282c1773f7335c
+generated: "2020-06-16T19:07:35.214437-03:00"
