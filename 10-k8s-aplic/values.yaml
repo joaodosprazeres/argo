@@ -20,7 +20,7 @@ k8s-aplic:
         labels: []
         annotations: 
           - key: "argocd.argoproj.io/sync-wave"
-            value: '"-2"'
+            value: '"-5"'
         spec: 
           source:
             targetRevision: HEAD
@@ -41,7 +41,9 @@ k8s-aplic:
       - name: calico
         finalizers: ["resources-finalizer.argocd.argoproj.io"]
         labels: []
-        annotations: []
+        annotations:
+          - key: "argocd.argoproj.io/sync-wave"
+            value: '"-4"'
         spec: 
           source:
             targetRevision: HEAD
@@ -64,7 +66,7 @@ k8s-aplic:
         labels: []
         annotations:
           - key: "argocd.argoproj.io/sync-wave"
-            value: '"-1"'
+            value: '"-4"'
         spec:
           destination:
             namespace: psc-admin
