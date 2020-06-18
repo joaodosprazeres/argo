@@ -5,4 +5,4 @@ service-external-name:
     - name: ldap
       urlExterna: ldp0pb1.bb.com.br
     - name: cachebb
-      urlExterna: cache.bb.desenv.com.br
+      urlExterna: cache.desenv.bb.com.br
