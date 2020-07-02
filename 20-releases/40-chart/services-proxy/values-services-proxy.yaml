@@ -1,4 +1,4 @@
-service-external-name:
+service-external-name: #so uns comentarios
   enable: true
   namespace: psc-proxy
   service:
