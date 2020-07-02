@@ -7,4 +7,4 @@ dnsservice-operator:
     type: "CNAME"
     ttl: "3600"
     description: "Zona desenv.bb para o cluster k8s-apps-des"
-    brokeridentity: "k8s-bbcloud eyJwcm9qZWN0X2lkIjogImRlc2VudiJ9Cg=="
+    brokeridentity: "k8s-bbcloud eyJwcm9qZWN0X2lkIjogImRlc2VudiJ9Cg==" #açlkdsjf çalkdsf a
