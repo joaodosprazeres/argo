@@ -1,6 +1,6 @@
 k8s-namespaces:
   release:
-    deploy: argocd # argocd ou manual
+    deploy: argocd # argocd ou manual çalkdsjfaçslkjfdsaflkj
     sigla: psc
     git: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
   clusterK8s:
