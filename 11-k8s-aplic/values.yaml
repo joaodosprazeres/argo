@@ -15,68 +15,83 @@ k8s-aplic:
   argocd:
     namespace: psc-argocd
     apps:
-      - name: rancher-aplic
-        finalizers: ["resources-finalizer.argocd.argoproj.io"]
-        labels: []
-        annotations: 
-          - key: "argocd.argoproj.io/sync-wave"
-            value: '"-5"'
-        spec: 
-          source:
-            targetRevision: HEAD
-            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
-            path: 00-bootstrap/05-rancher-aplic
-            helm:
-              valueFiles:
-                - values.yaml
-          destination:
-            namespace: cattle-system
-            server: https://caas-api.apps.nuvem.bb.com.br:6443
-          project: k8s-apps-des
-          syncPolicy:
-            automated:
-              prune: true
-              selfHeal: true
-
-      - name: calico
-        finalizers: ["resources-finalizer.argocd.argoproj.io"]
-        labels: []
-        annotations:
-          - key: "argocd.argoproj.io/sync-wave"
-            value: '"-4"'
-        spec: 
-          source:
-            targetRevision: HEAD
-            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
-            path: 20-releases/40-chart/calico
-            helm:
-              valueFiles:
-                - values.yaml
-          destination:
-            namespace: kube-system
-            server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
-          project: k8s-apps-des
-          syncPolicy:
-            automated:
-              prune: true
-              selfHeal: true
-
-      - name: namespaces
+      - name: nodemgr-operator
         finalizers: []
         labels: []
-        annotations:
-          - key: "argocd.argoproj.io/sync-wave"
-            value: '"-4"'
+        annotations: []
+        spec:
+          destination:
+            namespace: psc-nodemgr-operator
+            server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
+          project: k8s-apps-des
+          source:
+            helm:
+              valueFiles:
+              - values-k8s-namespaces.yaml
+              - values.yaml
+            path: 20-releases/40-chart/nodemgr-operator
+            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
+            targetRevision: HEAD
+          syncPolicy:
+            automated:
+              prune: true
+              selfHeal: true         
+ 
+      - name: dnsservice-operator
+        finalizers: []
+        labels: []
+        annotations: []
+        spec:
+          destination:
+            namespace: psc-dnsservice
+            server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
+          project: k8s-apps-des
+          source:
+            helm:
+              valueFiles:
+              - values-k8s-namespaces.yaml
+              - values.yaml
+            path: 20-releases/40-chart/dnsservice-operator
+            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
+            targetRevision: HEAD
+          syncPolicy:
+            automated:
+              prune: true
+              selfHeal: true  
+
+      - name: proxy
+        finalizers: []
+        labels: []
+        annotations: []
+        spec:
+          destination:
+            namespace: psc-proxy
+            server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
+          project: k8s-apps-des
+          source:
+            helm:
+              valueFiles:
+              - values-k8s-namespaces.yaml
+              - values-services-proxy.yaml
+            path: 20-releases/40-chart/services-proxy
+            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
+            targetRevision: HEAD
+          syncPolicy:
+            automated:
+              prune: true
+              selfHeal: true 
+
+      - name: k8s-objects
+        finalizers: []
+        labels: []
+        annotations: []
         spec:
           destination:
             namespace: psc-admin
             server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
           project: k8s-apps-des
           source:
-            helm:
-              valueFiles:
-              - values-k8s-namespaces.yaml
-            path: 20-releases/40-chart/k8s-namespaces
+            path: 20-releases/30-k8s-objects
             repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
             targetRevision: HEAD
           syncPolicy:
@@ -84,45 +99,23 @@ k8s-aplic:
               prune: true
               selfHeal: true
 
-      - name: nginx-ingress
-        finalizers: []
+      - name: volume-shared-operator
+        finalizers: ["resources-finalizer.argocd.argoproj.io"]
         labels: []
         annotations: []
         spec:
-          destination:
-            namespace: psc-nginx-ingress
-            server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
-          project: k8s-apps-des
           source:
+            targetRevision: HEAD
+            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
+            path: 20-releases/40-chart/volume-shared-operator
             helm:
               valueFiles:
-              - values-nginx-ingress.yaml
-              - values-k8s-namespaces.yaml
-            path: 20-releases/40-chart/nginx-ingress
-            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
-            targetRevision: HEAD
-          syncPolicy:
-            automated:
-              prune: true
-              selfHeal: true
-      
-      - name: nas-client
-        finalizers: []
-        labels: []
-        annotations: []
-        spec:
+                - values-k8s-namespaces.yaml
+                - values.yaml
           destination:
-            namespace: psc-nas-client
+            namespace: psc-volume-shared-operator
             server: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
           project: k8s-apps-des
-          source:
-            helm:
-              valueFiles:
-              - values-nas-client.yaml
-              - values-k8s-namespaces.yaml
-            path: 20-releases/40-chart/nas-client
-            repoURL: https://fontes.intranet.bb.com.br/psc/psc_releases_k8s-apps-des.git
-            targetRevision: HEAD
           syncPolicy:
             automated:
               prune: true
