@@ -9,7 +9,7 @@ k8s-namespaces:
     api: https://kube-api.apps.nuvem.desenv.bb.com.br:6443
   namespaces:
     enabled: true
-    servicos: #o nome do namespace sera sigla + nome  -----
+    servicos: #o nome do namespace sera sigla + nome
       - name: volume-shared-operator
         annotations:
           - key: argocd.argoproj.io/hook

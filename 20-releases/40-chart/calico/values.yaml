@@ -28,7 +28,7 @@ calico:
     # defines CALICO_IPV4POOL_IPIP or CALICO_IPV4POOL_VXLAN env vars
     encapsulation:
       type: "VXLAN"         # IPIP or VXLAN
-      mode: "CrossSubnet"  # Always, CrossSubnet açslkdjf asdçfl kjasdfçlkfj 
+      mode: "CrossSubnet"  # Always, CrossSubnet
 
     # defines FELIX_PROMETHEUSMETRICSENABLED and FELIX_PROMETHEUSMETRICSPORT env vars
     # also creates a service felix-metrics-svc to expose felix endpoints
