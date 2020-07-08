@@ -18,7 +18,7 @@ k8s-aplic:
       - name: nodemgr-operator
         finalizers: []
         labels: []
-        annotations: []
+        annotations: [hihihihi]
         spec:
           destination:
             namespace: psc-nodemgr-operator

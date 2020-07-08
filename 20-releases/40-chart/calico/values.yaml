@@ -1,6 +1,6 @@
 calico:
   global:
-    registry: atf.intranet.bb.com.br:5001 # Default registry for all images
+    registry: atf.intranet.bb.com.br:5001 # Default registry for all images hihihihi
     tag: "v3.14.1" # Default tag for all images
 
   # Configurations for calico-config 

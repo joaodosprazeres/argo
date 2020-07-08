@@ -20,7 +20,7 @@ k8s-aplic:
         labels: []
         annotations: 
           - key: "argocd.argoproj.io/sync-wave"
-            value: '"-5"'
+            value: '"-50"'
         spec: 
           source:
             targetRevision: HEAD
